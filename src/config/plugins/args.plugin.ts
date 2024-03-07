@@ -33,15 +33,10 @@ export const yarg = yargs(hideBin(process.argv))
     describe: "Destination of the file",
   })
   .check((argv, options) => {
-    if (isNaN(argv.b)) {
-      throw "The base must be a number";
-    }
     if (argv.b < 1) {
       throw "The base must be a positive number";
     }
-    if (isNaN(argv.l)) {
-      throw "The limit must be a number";
-    }
+
     return true;
   })
   .parseSync();

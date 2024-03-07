@@ -16,7 +16,8 @@ export class CreateTable implements CreateTableUseCase {
   execute({ base, limit = 10 }: CreateTableOptions) {
     let salida: string = "";
     for (let i = 1; i <= limit; i++) {
-      salida += `${base} x ${i} = ${base * i}\n`;
+      salida += `${base} x ${i} = ${base * i}`;
+      if (i < limit) salida += "\n";
     }
     return salida;
   }
